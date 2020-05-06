@@ -21,18 +21,18 @@ class WrapFopen {
 	const char* opening_mode;
 	FILE* file_pointer;
 public:
+	WrapFopen(const string& new_file_name,
+			  const char* new_opening_mode);
 	/**
 	* @brief  create WrapFopen and set the name of the file and the
 	*			opening mode
 	* @param  IN const string& new_file_name - the new file name
 	*		  IN const char* new_opening_mode - the opening mode
 	* @return this function has no return value
-	* @note   create WrapFopen and set the name of the file and the 
+	* @note   create WrapFopen and set the name of the file and the
 	*			opening mode
 	* @author  Liri
 	*/
-	WrapFopen(const string& new_file_name,
-			  const char* new_opening_mode);
 
 	FILE* open_file();
 

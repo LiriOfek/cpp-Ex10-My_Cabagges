@@ -5,3 +5,10 @@ Purpose: This file contain class of Exception_File_Not_Open,
 			with the function that throw exception
 			if fopen fail
 \********************************************************/
+
+#include "exceptions_for_file.h"
+
+Exception_File_Not_Open::Exception_File_Not_Open(const char* new_file_name) {
+	string file_name_new(new_file_name);
+	file_name = file_name_new;
+}
