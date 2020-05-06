@@ -30,7 +30,8 @@ public:
 	string what() throw ();
 	/**
 	* @brief  throw error message, contain the name of the file
-	* @return the error message
+	* @params OUT string the error massage, contain the name of the file
+	* @return the error message, contain the name of the file
 	* @note   throw error message, contain the name of the file
 	* @author  Liri
 	*/

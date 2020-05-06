@@ -11,12 +11,13 @@ Purpose: This header file contain class of WrapFopen, with the declaration
 
 #include <iostream>
 #include <string>
+#include "exceptions_for_file.h"
 
 using namespace std;
 
 /*class that wrap fopen, throw exception if the opening fail, and close the
 	file automatically if the program end*/
-class WrapFopen {
+class WrapFopen : public Exception_File_Not_Open {
 	const char* file_name;
 	const char* opening_mode;
 	FILE* file_pointer;
@@ -34,6 +35,14 @@ public:
 	* @author  Liri
 	*/
 
-	FILE* open_file();
+	FILE* fopen_throw_exception_if_fail();
+	/**
+	* @brief  open the file with fopen, and if there was an error throw
+	*			an exception
+	* @param  OUT pointer to the file
+	* @return the pointer to the file
+	* @note   open the file, and if the there was an error throw an exception
+	* @author  Liri
+	*/
 
 };

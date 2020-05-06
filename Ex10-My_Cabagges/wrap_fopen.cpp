@@ -15,8 +15,10 @@ WrapFopen::WrapFopen(const string& new_file_name,
 	opening_mode = new_opening_mode;
 }
 
-FILE* WrapFopen::open_file() {
+FILE* WrapFopen::fopen_throw_exception_if_fail() {
 	file_pointer = fopen(file_name, opening_mode);
-	/*to do - throw errors and change name of function!*/
+	if (!file_pointer) {
+		throw Exception_File_Not_Open(file_name);
+	}
 	return file_pointer;
 }
