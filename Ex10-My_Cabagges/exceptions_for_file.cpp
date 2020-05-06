@@ -17,6 +17,6 @@ Exception_File_Not_Open::Exception_File_Not_Open(const char* new_file_name)
 string Exception_File_Not_Open::what() throw ()
 {
 	string error_string;
-	error_string = "Error - Opening file: " + file_name + " fail!";
+	error_string = ERROR_OPEN_FILE + file_name + FAIL;
 	return error_string;
 }

@@ -14,6 +14,9 @@ Purpose: This header file contain class of Exception_File_Not_Open,
 
 using namespace std;
 
+const char* const ERROR_OPEN_FILE = "Error - Opening file: ";
+const char* const FAIL = " fail!";
+
 /*class that throw exception if there was a failure during fopen*/
 class Exception_File_Not_Open : public exception {
 	string file_name;
