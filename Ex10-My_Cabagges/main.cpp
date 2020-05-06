@@ -6,6 +6,8 @@ Purpose: This main file contain the main function that run the class that
 \********************************************************/
 
 #include "wrap_fopen.h"
+const string FILE_NAME = "file.txt";
+const char* OPENING_READ_MODE = "r";
 
 int main() {
 	/**
@@ -19,8 +21,8 @@ int main() {
 	*			thrown
 	* @author  Liri
 	*/
-	const string name_of_file = "file.txt";
-	const char* opening_read_mode = "r";
+	const string name_of_file = FILE_NAME;
+	const char* opening_read_mode = OPENING_READ_MODE;
 	try {
 		WrapFopen wrap_open_file(name_of_file, opening_read_mode);
 		wrap_open_file.fopen_throw_exception_if_fail();
