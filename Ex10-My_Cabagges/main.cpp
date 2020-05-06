@@ -19,7 +19,7 @@ int main() {
 	*			thrown
 	* @author  Liri
 	*/
-	const string name_of_file = "Not_Exist.txt";
+	const string name_of_file = "file.txt";
 	const char* opening_read_mode = "r";
 	try {
 		WrapFopen wrap_open_file(name_of_file, opening_read_mode);
