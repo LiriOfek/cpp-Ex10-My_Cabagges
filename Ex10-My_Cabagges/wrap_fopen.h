@@ -14,10 +14,23 @@ Purpose: This header file contain class of WrapFopen, with the declaration
 
 using namespace std;
 
+/*class that wrap fopen, throw exception if the opening fail, and close the
+	file automatically if the program end*/
 class WrapFopen {
 	const char* file_name;
 	const char* opening_mode;
 public:
+	/**
+	* @brief  create WrapFopen and set the name of the file and the
+	*			opening mode
+	* @param  IN const string& new_file_name - the new file name
+	*		  IN const char* new_opening_mode - the opening mode
+	* @return this function has no return value
+	* @note   create WrapFopen and set the name of the file and the 
+	*			opening mode
+	* @author  Liri
+	*/
 	WrapFopen(const string& new_file_name,
 			  const char* new_opening_mode);
+
 };
