@@ -26,4 +26,13 @@ public:
 	* @note   create Exception_File_Not_Open and set the name of the file 
 	* @author  Liri
 	*/
+
+	string what() throw ();
+	/**
+	* @brief  throw error message, contain the name of the file
+	* @return the error message
+	* @note   throw error message, contain the name of the file
+	* @author  Liri
+	*/
+
 };
