@@ -5,3 +5,7 @@ Purpose: This main file contain the main function that run the class that
 			wrap fopen and test it functionality
 \********************************************************/
 
+#include "wrap_fopen.h"
+
+int main() {
+}

@@ -45,4 +45,12 @@ public:
 	* @author  Liri
 	*/
 
+	~WrapFopen();
+	/**
+	* @brief  close the file automatically in the end of the program
+	* @return this function has no return value
+	* @note   close the file automatically
+	* @author  Liri
+	*/
+
 };

@@ -10,15 +10,25 @@ Purpose: This file contain class of WrapFopen, with the functions that
 #include "wrap_fopen.h"
 
 WrapFopen::WrapFopen(const string& new_file_name, 
-					 const char* new_opening_mode){
+					 const char* new_opening_mode) :
+	Exception_File_Not_Open(new_file_name.c_str()) 
+{
 	file_name = new_file_name.c_str();
 	opening_mode = new_opening_mode;
 }
 
-FILE* WrapFopen::fopen_throw_exception_if_fail() {
+FILE* WrapFopen::fopen_throw_exception_if_fail() 
+{
 	file_pointer = fopen(file_name, opening_mode);
 	if (!file_pointer) {
 		throw Exception_File_Not_Open(file_name);
 	}
 	return file_pointer;
+}
+
+WrapFopen::~WrapFopen() 
+{
+	if (file_pointer != NULL) {
+		fclose(file_pointer);
+	}
 }
