@@ -6,3 +6,11 @@ Purpose: This file contain class of WrapFopen, with the functions that
 			than throw exception, and if the progrem end than close the
 			file automatically
 \********************************************************/
+
+#include "wrap_fopen.h"
+
+WrapFopen::WrapFopen(const string& new_file_name, 
+					 const char* new_opening_mode){
+	file_name = new_file_name.c_str();
+	opening_mode = new_opening_mode;
+}
