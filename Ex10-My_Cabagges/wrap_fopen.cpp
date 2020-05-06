@@ -17,5 +17,6 @@ WrapFopen::WrapFopen(const string& new_file_name,
 
 FILE* WrapFopen::open_file() {
 	file_pointer = fopen(file_name, opening_mode);
+	/*to do - throw errors and change name of function!*/
 	return file_pointer;
 }
