@@ -19,6 +19,7 @@ using namespace std;
 class WrapFopen {
 	const char* file_name;
 	const char* opening_mode;
+	FILE* file_pointer;
 public:
 	/**
 	* @brief  create WrapFopen and set the name of the file and the
@@ -32,5 +33,7 @@ public:
 	*/
 	WrapFopen(const string& new_file_name,
 			  const char* new_opening_mode);
+
+	FILE* open_file();
 
 };

@@ -14,3 +14,8 @@ WrapFopen::WrapFopen(const string& new_file_name,
 	file_name = new_file_name.c_str();
 	opening_mode = new_opening_mode;
 }
+
+FILE* WrapFopen::open_file() {
+	file_pointer = fopen(file_name, opening_mode);
+	return file_pointer;
+}
