@@ -16,6 +16,7 @@ using namespace std;
 
 const char* const ERROR_OPEN_FILE = "Error - Opening file: ";
 const char* const FAIL = " fail!";
+const char* const ERROR_WRITING_TO_FILE = "Error - Can't write to file!";
 
 /*class that throw exception if there was a failure during fopen*/
 class Exception_File_Not_Open : public exception {
@@ -39,4 +40,17 @@ public:
 	* @author  Liri
 	*/
 
+};
+
+/*class that throw exception if there was a failure during fwrite*/
+class Exception_Write_File : public exception {
+public:
+	const char * what() const throw ();
+	/**
+	* @brief  throw error message, of failure during fwrite
+	* @params OUT string - the error massage
+	* @return the error message
+	* @note   throw error message
+	* @author  Liri
+	*/
 };

@@ -20,3 +20,7 @@ string Exception_File_Not_Open::what() throw ()
 	error_string = ERROR_OPEN_FILE + file_name + FAIL;
 	return error_string;
 }
+
+const char * Exception_Write_File::what() const throw () {
+	return ERROR_WRITING_TO_FILE;
+}
