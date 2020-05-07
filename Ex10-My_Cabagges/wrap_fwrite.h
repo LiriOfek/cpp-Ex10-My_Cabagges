@@ -1,5 +1,5 @@
 /********************************************************\
-File Name: wrap_fwirte.h
+File Name: wrap_fwrite.h
 Author: Liri (4/4/2020)
 Purpose: This header file contain class of WrapFwrite, that inherits 
 			from WrapFopen with the declaration of functions that run 

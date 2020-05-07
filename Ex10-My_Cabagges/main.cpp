@@ -15,12 +15,12 @@ int main() {
 	/**
 	* @brief  open file with WrapFile class, write to file with WrapFwrite 
 	*			class, and catch the exceptions that thrown
-	* @param  OUT - if exception thrown - EXIT_SUCCESS, otherwise -
-	*				EXIT_FAILURE
-	* @return if exception thrown - EXIT_SUCCESS, otherwise -
-	*			  EXIT_FAILURE
-	* @note   open file, write to file, close in the end, and catch exception 
-	*			if thrown
+	* @param  OUT - if exception thrown - EXIT_FAILURE, otherwise -
+	*			  EXIT_SUCCESS
+	* @return if exception thrown - EXIT_FAILURE, otherwise -
+	*			  EXIT_SUCCESS
+	* @note   open file, write to file, close in the end automatically,
+	*			and catch exception if thrown
 	* @author  Liri
 	*/
 	const string file_name = FILE_NAME;

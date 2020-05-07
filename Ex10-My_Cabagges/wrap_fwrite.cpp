@@ -1,5 +1,5 @@
 /********************************************************\
-File Name: wrap_fwirte.cpp
+File Name: wrap_fwrite.cpp
 Author: Liri (4/4/2020)
 Purpose: This file contain class of WrapFwrite, that inherits
 			from WrapFopen with the functions that run
