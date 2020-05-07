@@ -24,3 +24,7 @@ string Exception_File_Not_Open::what() throw ()
 const char * Exception_Write_File::what() const throw () {
 	return ERROR_WRITING_TO_FILE;
 }
+
+const char * Exception_read_file::what() const throw () {
+	return ERROR_READING_FROM_FILE;
+}
