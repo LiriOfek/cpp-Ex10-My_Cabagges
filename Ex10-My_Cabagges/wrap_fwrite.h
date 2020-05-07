@@ -30,5 +30,17 @@ public:
 	*			opening mode
 	* @author  Liri
 	*/
-
+	
+	int write_to_file(const void * buffer,
+					  size_t size,
+					  size_t count,
+					  FILE* fp);
+	/**
+	* @brief  write to the file with fopen, and if there was an error throw
+	*			an exception
+	* @param  OUT int - the return value of fwrite()
+	* @return the return value of fwrite()
+	* @note   write to the file, and if there was an error throw an exception
+	* @author  Liri
+	*/
 };
