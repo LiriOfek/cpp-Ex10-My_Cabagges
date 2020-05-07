@@ -8,3 +8,18 @@ Purpose: This file contain class of WrapFread, that inherits
 \********************************************************/
 
 #include "wrap_fread.h"
+
+int WrapFread::read_from_file(void* buffer, 
+							  size_t size, 
+							  size_t count, 
+							  FILE* fp)
+{
+	int return_value_of_fread = fread(buffer, 
+									  size, 
+									  count, 
+									  fp);
+	if (return_value_of_fread != count) {
+		throw Exception_read_file();
+	}
+	return return_value_of_fread;
+}

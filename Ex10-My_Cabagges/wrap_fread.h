@@ -31,5 +31,14 @@ public:
 	* @author  Liri
 	*/
 
-
+	int read_from_file(void* buffer, size_t size, size_t count, FILE* fp);
+	/**
+	* @brief  read from the file with fread, and if there was an error throw
+	*			unique exception
+	* @param  OUT int - the return value of fread()
+	* @return the return value of fread()
+	* @note   read the file, and if there was an error throw unique
+	*			exception
+	* @author  Liri
+	*/
 };
