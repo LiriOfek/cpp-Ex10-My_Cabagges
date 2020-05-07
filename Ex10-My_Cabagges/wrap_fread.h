@@ -6,3 +6,16 @@ Purpose: This header file contain class of WrapFread, that inherits
 			fread with the given parameters, if the reading fails
 			than throw exception
 \********************************************************/
+
+#pragma once
+
+#include "wrap_fopen.h"
+#include <cstdio>
+
+class WrapFread : public WrapFopen {
+public:
+	WrapFread(const string& new_file_name, 
+			  const char* new_opening_mode) :
+		WrapFopen(new_file_name, new_opening_mode) {
+	}
+};

@@ -6,3 +6,5 @@ Purpose: This file contain class of WrapFread, that inherits
 			fread with the given parameters, if the reading fails
 			than throw exception
 \********************************************************/
+
+#include "wrap_fread.h"
