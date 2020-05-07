@@ -8,8 +8,8 @@ Purpose: This main file contain the main function that run classes that
 #include "wrap_fopen.h"
 #include "wrap_fwrite.h"
 
-const string FILE_NAME = "new_file.txt";
-const char* OPENING_READ_MODE = "w";
+const string FILE_NAME = "file.txt";
+const char* OPENING_READ_MODE = "r";
 
 int main() {
 	/**
@@ -45,4 +45,24 @@ int main() {
 		return EXIT_FAILURE;
 	}
 	return EXIT_SUCCESS;
+}
+
+int size_of_file(FILE* file_pointer) {
+	/**
+	* @brief  calculate the length of the file in chars
+	* @param  IN FILE* file_pointer - the file pointer
+	*		  OUT int - the length of the files in chars
+	* @return the length of the file in chars
+	* @note   rewind the file pointer to the beginning of the file
+	* @author  Liri
+	*/
+	int length = 0;
+	while (feof(file_pointer) == 0) {
+		char c = getc(file_pointer);
+		if (c != EOF) {
+			length++;
+		}
+	}
+	rewind(file_pointer);
+	return length;
 }
