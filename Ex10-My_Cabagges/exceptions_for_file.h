@@ -57,7 +57,7 @@ public:
 };
 
 /*class that throw exception if there was a failure during fread*/
-class Exception_read_file : public exception {
+class Exception_Read_File : public exception {
 public:
 	const char* what() const throw ();
 	/**

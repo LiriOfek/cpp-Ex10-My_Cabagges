@@ -31,7 +31,10 @@ public:
 	* @author  Liri
 	*/
 
-	int read_from_file(void* buffer, size_t size, size_t count, FILE* fp);
+	int read_from_file_throw_exception_if_fail(void* buffer,
+											   size_t size, 
+											   size_t count, 
+											   FILE* fp);
 	/**
 	* @brief  read from the file with fread, and if there was an error throw
 	*			unique exception

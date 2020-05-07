@@ -122,12 +122,14 @@
   <ItemGroup>
     <ClInclude Include="exceptions_for_file.h" />
     <ClInclude Include="wrap_fopen.h" />
+    <ClInclude Include="wrap_fread.h" />
     <ClInclude Include="wrap_fwrite.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="exceptions_for_file.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="wrap_fopen.cpp" />
+    <ClCompile Include="wrap_fread.cpp" />
     <ClCompile Include="wrap_fwrite.cpp" />
   </ItemGroup>
   <ItemGroup>

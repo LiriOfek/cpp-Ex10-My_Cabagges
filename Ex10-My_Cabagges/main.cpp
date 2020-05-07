@@ -6,45 +6,59 @@ Purpose: This main file contain the main function that run classes that
 \********************************************************/
 
 #include "wrap_fopen.h"
-#include "wrap_fwrite.h"
+#include "wrap_fread.h"
+
+int size_of_file(FILE* file_pointer);
+void test_read_from_file_throw_exception_if_fail(WrapFread wrap_file,
+												 char buffer[]);
 
 const string FILE_NAME = "file.txt";
 const char* OPENING_READ_MODE = "r";
+const int MAX_SIZE_OF_BUFFER = 100;
+const char END_OF_STRING = '\0';
 
 int main() {
-	/**
-	* @brief  open file with WrapFile class, write to file with WrapFwrite 
-	*			class, and catch the exceptions that thrown
-	* @param  OUT - if exception thrown - EXIT_SUCCESS, otherwise -
-	*				EXIT_FAILURE
-	* @return if exception thrown - EXIT_SUCCESS, otherwise -
-	*			  EXIT_FAILURE
-	* @note   open file, write to file, close in the end, and catch exception 
-	*			if thrown
-	* @author  Liri
-	*/
-	const string file_name = FILE_NAME;
-	const char* opening_write_mode = OPENING_READ_MODE;
-	WrapFwrite wrap_file(file_name, opening_write_mode);
-	FILE* fp;
-	char buffer[] = "New file\nHello";
+	const string name_of_file = FILE_NAME;
+	const char* opening_read_mode = OPENING_READ_MODE;
+	WrapFread wrap_file(name_of_file, opening_read_mode);
+	char buffer[MAX_SIZE_OF_BUFFER];
 
 	try {
-		fp = wrap_file.fopen_throw_exception_if_fail();
-		wrap_file.write_to_file_throw_exception_if_fail(buffer,	
-														sizeof(char),
-														sizeof(buffer), 
-														fp);
+		test_read_from_file_throw_exception_if_fail(wrap_file,
+												    buffer);
 	}
 	catch (Exception_File_Not_Open& e) {
 		std::cout << e.what() << std::endl;
 		return EXIT_FAILURE;
 	}
-	catch (Exception_Write_File& e) {
+	catch (Exception_Read_File& e) {
 		std::cout << e.what() << std::endl;
 		return EXIT_FAILURE;
 	}
 	return EXIT_SUCCESS;
+}
+
+void test_read_from_file_throw_exception_if_fail(WrapFread wrap_file, 
+											     char buffer[]) {
+	/**
+	* @brief  run the functions that open the given file and read it 
+	*			to the given buffer
+	* @param  IN WrapFread wrap_file - the given wrap file, to read from
+	*		  IN char buffer[] - the buffer to write there what that in the file
+	* @return this function has no return value
+	* @note   open file, read from it to the buffer, and close the file
+	*			automatically in the end of the program
+	* @author  Liri
+	*/
+	FILE* file_pointer;
+	file_pointer = wrap_file.fopen_throw_exception_if_fail();
+	int count = size_of_file(file_pointer);
+	wrap_file.read_from_file_throw_exception_if_fail(buffer,
+													 sizeof(char),
+												     count,
+													 file_pointer);
+	buffer[count] = END_OF_STRING;
+	std::cout << buffer;
 }
 
 int size_of_file(FILE* file_pointer) {
