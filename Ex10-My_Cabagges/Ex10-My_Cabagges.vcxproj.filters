@@ -21,6 +21,9 @@
     <ClInclude Include="exceptions_for_file.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="wrap_fwrite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wrap_fopen.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wrap_fwrite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

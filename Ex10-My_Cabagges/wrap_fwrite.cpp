@@ -9,12 +9,15 @@ Purpose: This file contain class of WrapFwrite, that inherits
 
 #include "wrap_fwrite.h"
 
-int WrapFwrite::write_to_file(const void * buffer,
-							  size_t size,
-							  size_t count,
-							  FILE* fp)
+int WrapFwrite::write_to_file_throw_exception_if_fail(const void * buffer,
+													  size_t size,
+													  size_t count,
+													  FILE* fp)
 {
-	int return_value_of_fwrite = fwrite(buffer, size, count, fp);
+	int return_value_of_fwrite = fwrite(buffer, 
+										size,
+										count, 
+										fp);
 	if (return_value_of_fwrite != count) {
 		throw Exception_Write_File();
 	}
