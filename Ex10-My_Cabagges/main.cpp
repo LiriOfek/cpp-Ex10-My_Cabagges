@@ -2,7 +2,7 @@
 File Name: main.cpp
 Author: Liri (4/4/2020)
 Purpose: This main file contain the main function that run classes that
-			wrap fopen, wrap fwrite, and test their functionality
+			wrap fopen, wrap fread, and test their functionality
 \********************************************************/
 
 #include "wrap_fopen.h"
@@ -18,6 +18,17 @@ const int MAX_SIZE_OF_BUFFER = 100;
 const char END_OF_STRING = '\0';
 
 int main() {
+	/**
+	* @brief  open file with WrapFile class, read from file with WrapFread
+	*			class, and catch the exceptions that thrown
+	* @param  OUT - if exception thrown - EXIT_FAILURE, otherwise -
+	*				EXIT_SUCCESS
+	* @return if exception thrown - EXIT_FAILURE, otherwise -
+	*				EXIT_SUCCESS
+	* @note   open file, read from file, close in the end automatically,
+	*			and catch exception if thrown
+	* @author  Liri
+	*/
 	const string name_of_file = FILE_NAME;
 	const char* opening_read_mode = OPENING_READ_MODE;
 	WrapFread wrap_file(name_of_file, opening_read_mode);
