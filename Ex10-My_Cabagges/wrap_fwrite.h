@@ -21,12 +21,12 @@ public:
 		WrapFopen(new_file_name, new_opening_mode) {
 	}
 	/**
-	* @brief  create WrapFwriten and set the name of the file and the
+	* @brief  create WrapFwrite and set the name of the file and the
 	*			opening mode, by the constructor in WrapFopen
 	* @param  IN const string& new_file_name - the new file name
 	*		  IN const char* new_opening_mode - the opening mode
 	* @return this function has no return value
-	* @note   create WrapFwritten and set the name of the file and the
+	* @note   create WrapFwrite and set the name of the file and the
 	*			opening mode
 	* @author  Liri
 	*/
